@@ -18,12 +18,11 @@ export const AppointmentsPage = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     //Add contact info and clear data  
-    addAppointment().then (
-      setTitle(), 
-      setName(), 
-      setDate(), 
-      setTime()
-    );
+    addAppointment();
+      setTitle(); 
+      setName();
+      setDate(); 
+      setTime();
       
   };
 
@@ -31,13 +30,14 @@ export const AppointmentsPage = (props) => {
     <div>
       <section>
         <h2>Add Appointment</h2>
-        <AppointmentForm title={title} name={name} date={date} 
-          time={time} addAppointment={addAppointment} onSubmit={handleSubmit} />
+        <AppointmentForm title={title} setTitle={setTitle} name={name} setName={setName} 
+          date={date} setDate={setDate} time={time} setTime={setTime} 
+          addAppointment={addAppointment} onSubmit={handleSubmit} />
       </section>
       <hr />
       <section>
         <h2>Appointments</h2>
-        <TileList value={appointments} />
+        <TileList dataTiles={appointments} />
       </section>
     </div>
   );
