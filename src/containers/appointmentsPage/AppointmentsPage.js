@@ -12,13 +12,12 @@ export const AppointmentsPage = (props) => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  
-
+  const [contact, setContact] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     //Add contact info and clear data  
-    addAppointment();
+    addAppointment(title, name, date, time);
       setTitle(); 
       setName();
       setDate(); 
@@ -30,9 +29,9 @@ export const AppointmentsPage = (props) => {
     <div>
       <section>
         <h2>Add Appointment</h2>
-        <AppointmentForm title={title} setTitle={setTitle} name={name} setName={setName} 
+        <AppointmentForm contacts={contacts} contact={contact} setContact={setContact} title={title} setTitle={setTitle} name={name} setName={setName} 
           date={date} setDate={setDate} time={time} setTime={setTime} 
-          addAppointment={addAppointment} onSubmit={handleSubmit} />
+          addAppointment={addAppointment} handleSubmit={handleSubmit} />
       </section>
       <hr />
       <section>

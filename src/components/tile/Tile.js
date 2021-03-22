@@ -1,15 +1,16 @@
 import React from "react";
 
 export const Tile = ({dataTile}) => {
-
+    const array = Object.values(dataTile);
   return (
     <div className="tile-container">
-      {Object.values(dataTile).map( (value, i) => {
+      {array.map( (value, i) => {
         if(i === 0) {
-          return <p className='tile-title' key={i}>{value}</p>
+           return <p className='tile-title' key={i}>{value}</p>
           } else {
-           return <p className='tile'>{value}</p>} }
-      )}
+            for(i>0; i<array.length; i++) 
+            return <p className='tile' key={i}>{value}</p>} 
+          })}  
     </div>
   );
 };
